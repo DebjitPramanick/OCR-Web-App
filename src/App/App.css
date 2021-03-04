@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header{
+    padding: 16px 10px;
+    background-color: rgb(143, 35, 214);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.input-field{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.input-field label{
+    font-size: 16px;
+}
+
+.group{
+    width: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 4px;
+}
+.input-field input{
+    padding: 10px 8px;
+    outline: 0;
+    border: 0;
+    font-size: 16px;
+    color: rgb(137, 0, 190);
+    width: 100%;
+}
+
+.header button{
+    outline: 0;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 8px;
+    height: 100%;
+    background-color: transparent;
+}
+
+.group .icon{
+    font-size: 20px !important;
+    cursor: pointer;
+}
+
+.container{
+    display: flex;
+    column-gap: 14px;
+    margin: 14px;
+}
+
+.container .field{
+    flex-basis: 50%;
+}
+
+.container .result-field{
+    flex-basis: 50%;
+}
