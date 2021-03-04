@@ -4,6 +4,7 @@
     max-height: 800px;
     overflow-y: scroll;
     overflow-x: hidden;
+    border: 2px solid rgb(87, 87, 87);
 }
 
 .loader{
@@ -15,6 +16,22 @@
 
 .field img{
     width: 100%;
+}
+
+
+.field button{
+    padding: 8px 10px;
+    font-size: 16px;
+    color: white;
+    background-color: rgb(143, 35, 214);
+    cursor: pointer;
+    margin: 10px;
+    outline: 0;
+    border: 0;
+}
+
+.slider{
+    margin: 0 10px;
 }
 
 

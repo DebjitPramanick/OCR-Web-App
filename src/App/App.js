@@ -9,8 +9,6 @@ const App = () => {
 
     const API_KEY = "19d384e02b584b73b9bd5605bf78e7a1"
 
-
-
     const [query, setQuery] = useState('')
     const [img, setImage] = useState('')
     const [loading, setLoading] = useState(false)
@@ -36,6 +34,13 @@ const App = () => {
         
     }
 
+
+    const clear = () =>{
+        setSample('');
+        setImage('')
+        setQuery('')
+    }
+
     return (
         <div className="app-container">
             <div className="header">
@@ -52,15 +57,18 @@ const App = () => {
                             </button>
                         )}
                         <button onClick={(e) => search(e)}>
-                            
                             <SearchIcon className="icon" />
                         </button>
                     </div>
+
+                    <button onClick={clear} className="clearBtn">
+                        Clear All
+                    </button>
                 </div>
             </div>
 
             <div className="container">
-                <CropperComponent image={img.url} loading={loading}
+                <CropperComponent pic={img.url} loading={loading}
                 error={error} setSample={setSample}/>
 
                 <Result sample={sample}/>

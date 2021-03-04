@@ -53,6 +53,13 @@
     background-color: transparent;
 }
 
+.clearBtn{
+    background-color: white !important;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
 .group .icon{
     font-size: 20px !important;
     cursor: pointer;
