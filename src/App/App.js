@@ -14,13 +14,16 @@ const App = () => {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(false)
     const [sample, setSample] = useState('')
+    const [popup, setPopup] = useState(false)
 
     const URL = `https://api.apiflash.com/v1/urltoimage?access_key=${API_KEY}&url=${query}&full_page="true"&fresh="true"&quality=100`
 
     const search = async(e) => {
         e.preventDefault();
+        
         if(query){
             setLoading(true)
+            setPopup(true)
             const response = await fetch(URL);
             if (response.ok) {
                 setLoading(false)
@@ -31,7 +34,6 @@ const App = () => {
                 setError(true)
             }
         }
-        
     }
 
 
@@ -68,10 +70,16 @@ const App = () => {
             </div>
 
             <div className="container">
-                <CropperComponent pic={img.url} loading={loading}
-                error={error} setSample={setSample}/>
+                {popup && (
+                    <div className="popupScreen">
+                        <CropperComponent pic={img.url} loading={loading}
+                        error={error} setSample={setSample} setPopup={setPopup}/>
+                    </div>
+                    
+                )}
+                
 
-                <Result sample={sample}/>
+                <Result sample={sample} setSample={setSample}/>
             </div>
 
 

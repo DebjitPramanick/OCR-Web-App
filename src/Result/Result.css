@@ -1,14 +1,15 @@
 .result-field{
+    width: 100%;
     height: 800px;
     display: flex;
-    flex-direction: column;
     row-gap: 14px;
+    column-gap: 10px;
 }
 
 .cropped-image{
     background-color: rgb(226, 226, 226);
     width: 100%;
-    height: 50%;
+    height: 100%;
     overflow-y: scroll;
     border: 2px solid rgb(87, 87, 87);
     position: relative
@@ -20,30 +21,48 @@
 
 
 .navbar{
-    width: 100%;
+    width: fit-content;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
+    column-gap: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
 }
 
 .navbar button{
-    flex-basis: 50%;
-    padding: 6px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     background-color: rgb(143, 35, 214);
     color: white;
     outline: 0;
     border: 0;
-    margin: 0 10px;
+}
+
+.navbar button .icon{
+    color: white;
+    font-size: 18px !important;
+}
+
+.navbar button:disabled{
+    background-color: grey
 }
 
 
 .text{
     background-color: rgb(226, 226, 226);
-    height: 50%;
+    height: 100%;
     width: 100%;
     border: 2px solid rgb(87, 87, 87);
+    position: relative;
+    overflow-y: scroll;
 }
 
 .text p{

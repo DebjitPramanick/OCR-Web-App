@@ -1,94 +1,68 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import "./Cropper.css"
-import Cropper from 'react-easy-crop'
+import demo from "../img/demo.jpeg"
+
 import CircularProgress from '@material-ui/core/CircularProgress';
 import 'react-image-crop/dist/ReactCrop.css';
-
-import { Slider } from '@material-ui/core';
-
-
-const CropperComponent = ({ pic, loading, error, setSample }) => {
-
-    const [croppedArea, setCroppedArea] = useState(null)
-    const [crop, setCrop] = useState({ x: 0, y: 0 }); //Fro setting crop value 
-    const [zoom, setZoom] = useState(1)
-
-    const createImage = (url) =>
-        new Promise((resolve, reject) => {
-            const image = new Image();
-            image.addEventListener("load", () => resolve(image));
-            image.addEventListener("error", (error) => reject(error));
-            image.setAttribute("crossOrigin", "anonymous"); // needed to avoid cross-origin issues on CodeSandbox
-            image.src = url;
-    });
+import ReactCrop from 'react-image-crop';
+import Message from '../Message/Message';
 
 
+const CropperComponent = ({ pic, loading, error, setSample, setPopup }) => {
 
-    const getCroppedImg = async () => {
+    const [image, setImage] = useState(null); //For setting crop image
+    const [crop, setCrop] = useState({}); //Fro setting crop value
 
-        const image = await createImage(pic);
-
+    function getCroppedImg(e) {
+        e.preventDefault();
         const canvas = document.createElement('canvas');
         const scaleX = image.naturalWidth / image.width;
         const scaleY = image.naturalHeight / image.height;
-        canvas.width = croppedArea.width;
-        canvas.height = croppedArea.height;
+        canvas.width = crop.width;
+        canvas.height = crop.height;
         const ctx = canvas.getContext('2d');
-        console.log(image)
 
         ctx.drawImage(
             image,
-            croppedArea.x * scaleX,
-            croppedArea.y * scaleY,
-            croppedArea.width * scaleX,
-            croppedArea.height * scaleY,
+            crop.x * scaleX,
+            crop.y * scaleY,
+            crop.width * scaleX,
+            crop.height * scaleY,
             0,
             0,
-            croppedArea.width,
-            croppedArea.height,
+            crop.width,
+            crop.height,
         );
         const base64Image = canvas.toDataURL('image/jpeg');
         setSample(base64Image)
+        setPopup(false)
+
     }
 
-    const cropComplete = (percentage, pixels) => {
-        setCroppedArea(pixels)
-    }
 
 
     return (
-        <div className="field">
-            <button onClick={getCroppedImg}>Crop</button>
+        <div>
 
-            {(loading && !error) ? (
-                <div className="loader">
-                    <CircularProgress size="80px" />
-                </div>
-            ) : (!error) ? (
 
-                <div className="controller">
-                    <div className="slider">
-                        <Slider min={1} max={10} step={0.1}
-                            onChange={(e, zoom) => setZoom(zoom)} />
-                    </div>
-                    <div className="easy-cropper">
-                        <Cropper
-                            crossorigin="anonymous"
-                            image={pic}
-                            crop={crop}
-                            aspect={1}
-                            zoom={zoom}
-                            onCropChange={setCrop}
-                            onZoomChange={setZoom}
-                            onCropComplete={cropComplete} />
-                    </div>
-                </div>
-
+            {error ? (
+                <Message error={true} message="Error occured. Enter correct URL." />
             ) : (
-                        <p>Error occured. Enter correct URL.</p>
-                    )}
+                    <div className="field">
+                        <button onClick={getCroppedImg}>Crop</button>
+
+                        {loading ? (
+                            <div className="loader">
+                                <CircularProgress size="80px" />
+                            </div>
+                        ) : (
+                                <ReactCrop src={pic} onImageLoaded={setImage}
+                                    crop={crop} onChange={setCrop} crossorigin="anonymous" />
+                            )}
 
 
+                    </div>
+            )}
         </div>
 
     )

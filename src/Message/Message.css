@@ -1,0 +1,33 @@
+.box-container{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.message-box{
+    width: 260px;
+    height: 260px;
+    margin: auto;
+    border: 2px solid darkgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    border-radius: 6px;
+}
+
+.error p{
+    color: red !important;
+}
+
+.message-box p{
+    color: rgba(112, 112, 112, 0.911);
+    font-size: 20px;
+    font-weight: bold;
+}
