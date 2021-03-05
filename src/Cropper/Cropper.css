@@ -3,8 +3,8 @@
     width: 90vw;
     max-height: 96%;
     overflow-y: scroll;
-    overflow-x: hidden;
     border: 2px solid rgb(87, 87, 87);
+    overflow-x: hidden;
 }
 
 .loader{
@@ -29,13 +29,3 @@
     outline: 0;
     border: 0;
 }
-
-/* .slider{
-    margin: 0 10px;
-}
-
-
-.easy-cropper{
-    min-height: 800px;
-    position: relative;
-} */

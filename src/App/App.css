@@ -74,8 +74,8 @@
     z-index: 9999;
     background-color: rgba(0, 0, 0, 0.842);
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
 .container{

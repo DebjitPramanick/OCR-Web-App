@@ -47,7 +47,7 @@ const Result = ({ sample, setSample }) => {
                     <button onClick={copy} disabled={res ? false : true}>
                         <FileCopyIcon className="icon" />
                     </button>
-                    <button onClick={() => setSample('')}>
+                    <button onClick={() => setRes('')}>
                         <DeleteIcon className="icon" />
                     </button>
                 </div>

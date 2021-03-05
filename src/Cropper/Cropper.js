@@ -42,7 +42,7 @@ const CropperComponent = ({ pic, loading, error, setSample, setPopup }) => {
 
 
     return (
-        <div>
+        <div className="field">
 
 
             {error ? (
@@ -56,8 +56,11 @@ const CropperComponent = ({ pic, loading, error, setSample, setPopup }) => {
                                 <CircularProgress size="80px" />
                             </div>
                         ) : (
-                                <ReactCrop src={pic} onImageLoaded={setImage}
-                                    crop={crop} onChange={setCrop} crossorigin="anonymous" />
+                            <div>
+                               <ReactCrop src={pic} onImageLoaded={setImage}
+                                    crop={crop} onChange={setCrop} crossorigin="anonymous" /> 
+                            </div>
+                                
                             )}
 
 

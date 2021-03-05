@@ -77,8 +77,6 @@ const App = () => {
                     </div>
                     
                 )}
-                
-
                 <Result sample={sample} setSample={setSample}/>
             </div>
 
