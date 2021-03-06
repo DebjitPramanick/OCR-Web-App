@@ -9,6 +9,7 @@
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.1",
     "cropperjs": "^1.5.11",
+    "firebase": "^8.2.10",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-easy-crop": "^3.3.1",

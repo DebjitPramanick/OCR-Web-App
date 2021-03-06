@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import "./App.css"
 import SearchIcon from '@material-ui/icons/Search';
+import ClearAllIcon from '@material-ui/icons/ClearAll';
 import ClearIcon from '@material-ui/icons/Clear';
 import CropperComponent from '../Cropper/Cropper';
 import Result from '../Result/Result';
@@ -64,7 +65,7 @@ const App = () => {
                     </div>
 
                     <button onClick={clear} className="clearBtn">
-                        Clear All
+                        <ClearAllIcon className='icon'/>
                     </button>
                 </div>
             </div>

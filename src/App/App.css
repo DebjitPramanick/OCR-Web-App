@@ -18,6 +18,7 @@
     justify-content: center;
     align-items: center;
     column-gap: 10px;
+    max-width: 98%;
 }
 
 .input-field label{
@@ -65,6 +66,10 @@
     padding: 0 10px;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.clearBtn .icon{
+    font-size: 20px !important;
 }
 
 .group .icon{
