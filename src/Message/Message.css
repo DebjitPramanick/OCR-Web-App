@@ -20,6 +20,13 @@
     text-align: center;
     background-color: white;
     border-radius: 6px;
+    position: relative;
+}
+
+.message-box .icon{
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .error p{

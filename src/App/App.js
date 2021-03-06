@@ -77,7 +77,7 @@ const App = () => {
                     </div>
                     
                 )}
-                <Result sample={sample} setSample={setSample}/>
+                <Result sample={sample} setSample={setSample} query={query}/>
             </div>
 
 

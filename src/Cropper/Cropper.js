@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState } from 'react'
 import "./Cropper.css"
-import demo from "../img/demo.jpeg"
+import CancelIcon from '@material-ui/icons/Cancel';
 
 import CircularProgress from '@material-ui/core/CircularProgress';
 import 'react-image-crop/dist/ReactCrop.css';
@@ -36,35 +36,38 @@ const CropperComponent = ({ pic, loading, error, setSample, setPopup }) => {
         const base64Image = canvas.toDataURL('image/jpeg');
         setSample(base64Image)
         setPopup(false)
+    }
 
+    const cancel = () => {
+        setSample('')
+        setPopup(false)
     }
 
 
 
     return (
         <div className="field">
-
-
             {error ? (
-                <Message error={true} message="Error occured. Enter correct URL." />
+                <Message error={true} message="Error occured. Enter correct URL." setPopup={setPopup} />
             ) : (
-                    <div className="field">
+                <>
+                    <div className="field-header">
                         <button onClick={getCroppedImg}>Crop</button>
-
-                        {loading ? (
+                        <CancelIcon className="icon" onClick={cancel} />
+                    </div>
+                    {
+                        loading ? (
                             <div className="loader">
                                 <CircularProgress size="80px" />
                             </div>
                         ) : (
-                            <div>
-                               <ReactCrop src={pic} onImageLoaded={setImage}
-                                    crop={crop} onChange={setCrop} crossorigin="anonymous" /> 
+                            <div className="img-container">
+                                <ReactCrop src={pic} onImageLoaded={setImage}
+                                    crop={crop} onChange={setCrop} crossorigin="anonymous" />
                             </div>
-                                
-                            )}
 
-
-                    </div>
+                        )
+                    }</>
             )}
         </div>
 

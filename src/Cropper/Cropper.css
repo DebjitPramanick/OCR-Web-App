@@ -2,9 +2,9 @@
     background-color: rgb(226, 226, 226);
     width: 90vw;
     max-height: 96%;
-    overflow-y: scroll;
+    min-height: 460px;
     border: 2px solid rgb(87, 87, 87);
-    overflow-x: hidden;
+    position: relative;
 }
 
 .loader{
@@ -14,8 +14,25 @@
     height: 800px;
 }
 
-.field img{
-    width: 100%;
+.field-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.field .icon{
+    font-size: 28px !important;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.img-container{
+    overflow-y: scroll;
+    height: 90vh
+}
+
+.img-container img{
+    width: 100%
 }
 
 

@@ -6,6 +6,12 @@
     column-gap: 10px;
 }
 
+@media(max-width: 860px){
+    .result-field{
+        flex-direction: column;
+    }
+}
+
 .cropped-image{
     background-color: rgb(226, 226, 226);
     width: 100%;
@@ -46,6 +52,24 @@
     border: 0;
 }
 
+.copied-message{
+    width: 0px;
+    height: 40px;
+    background-color: rgb(34, 207, 86);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    overflow: hidden;
+    transition: 1s;
+}
+
+.copied-message.animate{
+    width: fit-content;
+    padding: 0 10px;
+}
+
 .navbar button .icon{
     color: white;
     font-size: 18px !important;
@@ -65,7 +89,16 @@
     overflow-y: scroll;
 }
 
-.text p{
+.text .loader{
+    height: 100%;
+}
+
+.text .result{
+    background-color: white;
+    color: rgb(80, 80, 80);
+    padding: 10px;
+    border-radius: 4px;
     margin: 10px;
+    margin-top: 60px;
 }
 

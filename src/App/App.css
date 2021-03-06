@@ -24,6 +24,12 @@
     font-size: 16px;
 }
 
+@media(max-width: 860px){
+    .input-field label{
+        display: none;
+    }
+}
+
 .group{
     width: 360px;
     display: flex;
@@ -54,8 +60,9 @@
 }
 
 .clearBtn{
+    height: 38px !important;
     background-color: white !important;
-    padding: 10px;
+    padding: 0 10px;
     border-radius: 4px;
     cursor: pointer;
 }
