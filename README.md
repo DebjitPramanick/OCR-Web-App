@@ -20,6 +20,7 @@ Hi! I'm Debjit, a **MERN Stack Developer**. This is a simple OCR (Optical Charac
 - Material UI
 - React Image Crop
 - Firebase
+- Tesseract JS
 
 ## Screenshots
 
